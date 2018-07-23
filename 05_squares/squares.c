@@ -56,11 +56,11 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
   }
 }
 
-int main(int argc, char* argv[]){
+/*int main(int argc, char* argv[]){
   int a,b,c,d;
   a = atoi(argv[1]);
   b = atoi(argv[2]);
   c = atoi(argv[3]);
   d = atoi(argv[4]);
   squares(a, b, c, d);
-}
+  }*/
