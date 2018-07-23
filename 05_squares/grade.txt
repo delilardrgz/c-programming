@@ -1,14 +1,9 @@
-Grading at Mon Jul 23 15:45:12 UTC 2018
+Grading at Mon Jul 23 16:39:20 UTC 2018
 Trying to compile your code and link with squares_test.o
-squares.c: In function ‘squares’:
-squares.c:24:56: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
-       if ((x >= x_offset) && (x <= (x_offset + size2)) &&
-                                                        ^
-squares.c: At top level:
-squares.c:59:6: error: return type of ‘main’ is not ‘int’ [-Werror=main]
- void main(int argc, char* argv[]){
-      ^
-cc1: all warnings being treated as errors
+squares_test.o: In function `main':
+squares_test.c:(.text+0xe2): multiple definition of `main'
+/tmp/ccnYo3MN.o:squares.c:(.text+0x151): first defined here
+collect2: error: ld returned 1 exit status
 Could not compile your code
 
 Overall Grade: FAILED
