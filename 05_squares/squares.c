@@ -21,14 +21,19 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
     for (int x = 0; x < w; x++){
       //check if  EITHER
       //    ((x is between x_offset  and x_offset +size2) AND
-      if (((( x >= x_offset) && (x <= (x_offset + size2)))&&
-      //     y is equal to either y_offset OR y_offset + size2 - 1 )
-	   ((y == y_offset) || (y == (y_offset + size2 -1)))) ||
+      if (
+	  (
+	   (x < (x_offset + size2) && x >= x_offset) &&
+       // y is equal to either y_offset OR y_offset + size2 - 1 )
+	   ((y == y_offset) || (y == (y_offset + size2 -1)))
+	   ) ||
 	  //OR
       //    ((y is between y_offset and y_offset + size2) AND
-	  (((y >= y_offset) && (y <= (y_offset + size2))) &&
+	  (((y < (y_offset + size2) && y >= y_offset)) &&
     //     x is equal to either x_offset OR x_offset + size2 -1)
-	   ((x == x_offset) || (x == (x_offset + size2 -1))))){
+	   ((x == x_offset) || (x == (x_offset + size2 -1))))
+	  )
+	{
       // if so, print a *
 	    printf("*");
 	 }
@@ -47,20 +52,10 @@ void squares(int size1, int x_offset, int y_offset, int size2) {
          else{
 	   printf(" ");
 	 }
-    //when you finish counting x from 0 to w,
-      }
+	 //when you finish counting x from 0 to w,
+       }
     }
    //print a newline
     printf("\n");
-    
-  }
+ }
 }
-
-/*int main(int argc, char* argv[]){
-  int a,b,c,d;
-  a = atoi(argv[1]);
-  b = atoi(argv[2]);
-  c = atoi(argv[3]);
-  d = atoi(argv[4]);
-  squares(a, b, c, d);
-  }*/
