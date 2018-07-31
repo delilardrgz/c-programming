@@ -16,15 +16,51 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
+typedef struct rect_tag{
+  int x;
+  int y;
+  int width;
+  int height;
+} rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
+  //check if width or height are negative
+  if (r.width < 0){
+    r.width *= -1;
+    r.x -= r.width;
+  }
+  if (r.height < 0){
+    r.height *= -1;
+    r.y -= r.height;
+  }
   return r;
 }
+
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
-  return r1;
+  rectangle new_r1 = canonicalize(r1);
+  rectangle new_r2 = canonicalize(r2);
+  rectangle r;
+  //find bottom left x value
+  r.x = max(new_r1.x, new_r2.x);
+  //printf("r1.x: %d\n", new_r1.x);
+  //printf("r2.x: %d\n", new_r2.x);
+  //find bottom left y value
+  r.y = max(new_r1.y, new_r2.y);
+  //printf("r1.y: %d\n", new_r1.y);
+  //printf("r2.y: %d\n", new_r2.y);
+  //find top right x value
+  int topright_x = min((new_r1.x + new_r1.width), (new_r2.x + new_r2.width));
+  //find to right y value
+  int topright_y = min((new_r1.y + new_r1.height), (new_r2.y + new_r2.height));
+  r.width = topright_x - r.x;
+  r.height = topright_y - r.y;
+  if (topright_x < r.x || topright_y < r.y){
+    r.width = 0;
+    r.height = 0;
+  }
+  return r;
 }
 
 //You should not need to modify any code below this line
@@ -140,7 +176,6 @@ int main (void) {
   i = intersection(r4,r4);
   printf("intersection(r4,r4): ");
   printRectangle(i);
-
 
   return EXIT_SUCCESS;
 
