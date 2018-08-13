@@ -23,31 +23,31 @@ void assert_card_valid(card_t c) {
 const char * ranking_to_string(hand_ranking_t r) {
   switch(r){
   case 0:
-    return "straight flush";
+    return "STRAIGHT FLUSH";
     break;
   case 1:
-    return "four of a kind";
+    return "FOUR OF A KIND";
     break;
   case 2:
-    return "full house";
+    return "FULL HOUSE";
     break;
   case 3:
-    return "flush";
+    return "FLUSH";
     break;
   case 4:
-    return "straight";
+    return "STRAIGHT";
     break;
   case 5:
-    return "three of a kind";
+    return "THREE OF A KIND";
     break;
   case 6:
-    return "two pair";
+    return "TWO PAIR";
     break;
   case 7:
-    return "pair";
+    return "PAIR";
     break;
   case 8:
-    return "nothing";
+    return "NOTHING";
     break;
   default:
     return "invalid rank";
