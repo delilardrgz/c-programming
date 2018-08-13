@@ -11,13 +11,13 @@ typedef struct deck_tag{
 
 void assert_card_valid(card_t c) {
   //print the value of c
-  // printf("The value of c: %d\n", c.value);
+  //printf("The value of c: %d\n", c.value);
   //print the suit of c
   //printf("The suit of c: %d\n", c.suit);
   assert(c.value >= 2);
   assert(c.value <= 14);
   assert(c.suit >= 0);
-  assert(c.suit <= 4);
+  assert(c.suit < 4);
 }
 
 const char * ranking_to_string(hand_ranking_t r) {
