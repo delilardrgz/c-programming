@@ -4,17 +4,17 @@
 int main(void) {
   card_t c;
   c.value = 14;
-  c.suit = 3;
+  c.suit = 4;
   assert_card_valid(c);
   //test value asserts
-  c.value = 13; //-1, 0, 1, 2, 3, 13, 14, 15, 100
-  assert_card_valid(c);
+  //c.value = 13; //-1, 0, 1, 2, 3, 13, 14, 15, 100
+  //assert_card_valid(c);
   //test suit asserts
-  c.suit = 1; //-1, 0, 1, 3, 4, 5, 101
-  assert_card_valid(c);
+  //c.suit = 1; //-1, 0, 1, 3, 4, 5, 101
+  //assert_card_valid(c);
 
-  hand_ranking_t r = 0;//0, 1, 7 , 8, -1, 9, 1000
-  printf("%s\n", ranking_to_string(r));
+  //hand_ranking_t r = 0;//0, 1, 7 , 8, -1, 9, 1000
+  //printf("%s\n", ranking_to_string(r));
   
   //c.value = 102;//1,2,8,9,10,11,12,13,14,15
   //printf("%c\n", value_letter(c));
