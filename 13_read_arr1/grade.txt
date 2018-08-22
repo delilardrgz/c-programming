@@ -1,0 +1,8 @@
+Grading at Wed Aug 22 14:43:28 UTC 2018
+Attempting to compile test.c
+make: Nothing to be done for 'main'.
+compiled
+Your file matched the expected output
+Your output matched what we expected
+
+Overall Grade: A
