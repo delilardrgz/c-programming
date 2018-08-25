@@ -2,7 +2,24 @@
 #include <stdlib.h>
 
 int * arrayMax(int * array, int n) {
-  return NULL;
+  if (n == 0){
+    //if length is 0, return NULL
+    return NULL;
+  }
+  // set largElement equal to array[0]
+  int largElement = array[0];
+  //count, for each element in the array, compare largElemnet to array[i]
+  for (int i=1; i < n; i++){
+    // printf("array[%d]: %d\n", i, array[i]);
+    if (array[i] > largElement){
+      //printf("%d is larger than %d\n", array[i], largElement);
+      largElement = array[i];
+    }
+  }
+  //printf("Largest element is: %d\n", largElement);
+  // create pointer of type int that points to the address of largElement
+  int * p = &largElement;
+  return p;
 }
 
 void doTest(int * array, int n) {
