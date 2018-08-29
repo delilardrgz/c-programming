@@ -4,51 +4,43 @@
 size_t maxSeq(int * array, size_t n){
   //returns the length of the maximum  increasing contiguous subsequence
   // of integers in the array
-
-  //create a variable of type int named current, set it equal to array index 1
-  int current = array[0];
-  //printf("pointer to first element in array is: %d\n", current);
-  //create a variable of type int named size, set it equal to n
-  int size = n;
-  //printf("size is: %d\n", size);
-  int length =(sizeof(array)/sizeof(current));
-  //printf("length is: %d\n", length +1);
+ 
+  //create a pointer to the first element
+  int * p = &array[0];
   //create a variable of type int named count
   int count;
+  //check if array is empty
+  if (p == NULL){
+    count =0;
+    return count;
+  }
+  //create a variable of type size_t named current,set it equal to array index 1
+  size_t current = array[0];
+  
+  if (n == 0){
+    //size is 0
+    count = 0;
+    return count;
+  }
   //create a variable of type int named next which is uninitialized
   int next;
-  //if array is empty or equal to 0, return 0
-  //if (current == NULL){
-    //return 0;
-    //}
-  if (size == 0){
-    return 0;
-  }
-  else{
-    //array has at least 1 element, count = 1
-    count = 1;
-  }
-  if (size != (length +1)){
-    return EXIT_FAILURE;
-  }
+  //there is at least 1 element in the array, set count to 1
+  count = 1;
   //count for each item in array
-  for (int i = 1; i < size; i++){
-  //set next equal to what current is pointing to
+  for (int i = 1; i < n; i++){
+  //set next equal to current
     next = current;
-    //printf("now next is: %d\n", next);
+    //printf("top of for loop, next is: %d\n", next);
   //set current equal to the address of array[i]
     current = array[i];
+    //printf("now current is:%lu\n", current);
   //if current > next
       if (current > next){
   //increment count
+	//printf("current is greater than next\n");
 	count++;
-      }
-  //else count = 0
-      else{
-        count = 0;
       }
   }
   //return count
-  //printf("count is: %d\n", count);
   return count;
 }
