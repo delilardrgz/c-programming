@@ -1,7 +1,76 @@
-Grading at Wed Aug 29 04:32:49 UTC 2018
+Grading at Thu Aug 30 05:13:17 UTC 2018
 **Testing broken implementation 10 **
 -------------------------------------
 
-Your test program did not identify /usr/local/l2p/subseq/subseq10.o as broken!
+********************************array= {-1,1,2}  size = 3
+*******************************array = {} size = 2
+Failed to determine wrong size
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+failed, unsigned int. result =1 
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+failed, unsigned int. result =1 
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+
+**Testing correct implementation **
+-------------------------------------
+
+********************************array= {-1,1,2}  size = 3
+read unsigned as int. result= 3
+Your test program falsely failed the correct implementation!
 
 Overall Grade: FAILED
