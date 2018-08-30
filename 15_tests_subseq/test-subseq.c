@@ -4,6 +4,7 @@
 size_t maxSeq(int * array, size_t n);
 
 int main(void){
+  /*
   //two sequence of increasing values
   int array1[] = {1,-1,2,0};
   int size1 = maxSeq(array1,4);
@@ -26,13 +27,22 @@ int main(void){
     printf("fail, nothing concurent. size = %d\n", size3);
     return EXIT_FAILURE;
     }
+  */
+
   //10
-  unsigned array3[] = {-1,0,1};
-  unsigned size4 = maxSeq(array3,3);
-  if (size4 != 2){
-    printf("failed unsigned. size = %u", size4);
+  unsigned array3[] = {-1,1, 2};
+  printf("********************************array= {-1,1,2}  size = 3\n");
+  size_t size4 = maxSeq(array3,3);
+  if (size4 == 3){ 
+    printf("read unsigned as int. result= %lu\n", size4);
     return EXIT_FAILURE;
-    }
+  }
+  else if (size4 != 2){
+    printf("failed, unsigned int. result =%lu \n", size4);
+    return EXIT_FAILURE;
+  }
+
+  /*
   //11
   int array4[1] = {11};
   int size5 = maxSeq(array4,1);
@@ -40,26 +50,31 @@ int main(void){
     printf("fail, size is 1");
     return EXIT_FAILURE;
     }
+  */
+  /*
   //empty
   int size6 = maxSeq(NULL,0);
   if (size6 != 0){
     printf("Fail to determine empty array\n");
     return EXIT_FAILURE;
     }
-  //1
-  //size bigger than array
-  /*int array6[] = {1,2,3};
-  int size7 = maxSeq(array6,35);
-  if (size7 != 1){
-    printf("fail,determined size too big. size = %d", size7);
+  */
+  //test for 10, wrong size
+  int array5[] = {};
+  size_t length = (sizeof(array5) / sizeof(array5[0]));
+  //size_t size = 2;
+  printf("*******************************array = {} size = 2\n");
+  int result = maxSeq(array5, 10);
+  if (result != 0){
+    printf("Failed to determine wrong size\n");
     return EXIT_FAILURE;
-    }
-  int array7[] = {1,0,5,6,2,7,8};
-  int size8 = maxSeq(array7,7);
-  if(size8 != 3){
-    
-    return EXIT_FAILURE;
-    }*/
-
+  }else{
+    printf("result = %d\n", result);
+  }
+    /*if (length != size){
+      printf("user passed in wrong size, result = %d\n", result);
+      //size = length;
+      return EXIT_FAILURE;
+      }*/
   return EXIT_SUCCESS;
 }
